@@ -11,6 +11,14 @@ ul {
   padding: 0;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
 body,
 html {
   font-family: "Montserrat", sans-serif;
@@ -25,44 +33,44 @@ a {
   text-decoration: none;
 }
 
-#bottom {
+footer #bottom {
   width: 100%;
   min-height: 300px;
   background-color: #000;
   color: #fff;
 }
-#bottom footer .contact {
+footer #bottom .contact {
   display: flex;
   justify-content: space-around;
 }
-#bottom footer .contact ul {
+footer #bottom .contact ul {
   width: 150px;
   display: inline-block;
   margin-top: 20px;
   margin-left: 25px;
 }
-#bottom footer .contact ul h3 {
+footer #bottom .contact ul h3 {
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 25px;
 }
-#bottom footer .contact ul li {
+footer #bottom .contact ul li {
   opacity: 0.5;
   margin-top: 10px;
 }
-#bottom footer .contact .subscribe {
+footer #bottom .contact .subscribe {
   width: 270px;
   display: inline-block;
   margin-top: 20px;
 }
-#bottom footer .contact .subscribe h3 {
+footer #bottom .contact .subscribe h3 {
   text-transform: capitalize;
   letter-spacing: 1px;
 }
-#bottom footer .contact .subscribe p {
+footer #bottom .contact .subscribe p {
   opacity: 0.5;
 }
-#bottom footer .contact .subscribe form input[type=email] {
+footer #bottom .contact .subscribe form input[type=email] {
   background-color: transparent;
   border: none;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3215686275);
@@ -70,11 +78,11 @@ a {
   outline: none;
   letter-spacing: 1px;
 }
-#bottom footer .contact .subscribe form input[type=submit] {
+footer #bottom .contact .subscribe form input[type=submit] {
   width: 100%;
   height: 40px;
   margin-top: 20px;
-  background-color: rgba(223, 82, 0, 0.7450980392);
+  background-color: #df5200;
   border: none;
   color: #fff;
   letter-spacing: 0.2px;
@@ -83,27 +91,28 @@ a {
   opacity: 0.7;
   transition: all linear 0.35s;
 }
-#bottom footer .contact .subscribe form input[type=submit]:hover {
+footer #bottom .contact .subscribe form input[type=submit]:hover {
   opacity: 1;
   cursor: pointer;
 }
-#bottom footer a {
+footer #bottom a {
   color: #fff;
 }
 
 #products {
-  width: 80%;
+  width: 84%;
   margin: 0 auto;
   padding: 55px;
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 20px;
+  flex-wrap: wrap;
 }
 #products .cards {
   width: 350px;
   height: auto;
-  display: inline-block;
-  margin-right: 15px;
-}
-#products .cards:nth-last-child(1) {
-  margin-right: 0;
+  position: relative;
 }
 #products .cards__img {
   width: 100%;
@@ -129,4 +138,72 @@ a {
 }
 #products .cards__product--price::before {
   content: "$ ";
+}
+#products .cards__product--icon {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 9;
+  width: 16px;
+}
+
+header nav {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  align-items: center;
+  margin: 20px 0;
+}
+header nav .brand {
+  font-size: 35px;
+  letter-spacing: 3px;
+}
+header nav .category {
+  display: flex;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  cursor: pointer;
+}
+header nav form {
+  position: relative;
+  margin-left: 30px;
+}
+header nav form input {
+  width: 330px;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 30px;
+  outline: none;
+  font-size: 12px;
+  background: rgba(211, 211, 211, 0.3098039216);
+}
+header nav form img {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  width: 15px;
+}
+header nav .account {
+  display: flex;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+header nav .account .active {
+  border-bottom: 2px solid rgb(255, 0, 0);
+}
+header nav .account li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  row-gap: 5px;
+}
+header nav .account li img {
+  width: 20px;
+}
+header nav .account li a {
+  color: #000;
 }/*# sourceMappingURL=style.css.map */
