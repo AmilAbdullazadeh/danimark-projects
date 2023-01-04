@@ -99,18 +99,35 @@ footer #bottom a {
   color: #fff;
 }
 
+.item-1 {
+  grid-area: header;
+}
+
+.item-2 {
+  grid-area: main;
+}
+
+.item-3 {
+  grid-area: sidebar;
+}
+
+.item-4 {
+  grid-area: footer;
+}
+
 #products {
   width: 84%;
   margin: 0 auto;
   padding: 55px;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto;
+  grid-template-areas: "header header header" "main . sidebar" "footer footer footer";
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 20px;
-  flex-wrap: wrap;
 }
 #products .cards {
-  width: 350px;
   height: auto;
   position: relative;
 }
