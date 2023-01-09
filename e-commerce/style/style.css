@@ -1,22 +1,62 @@
-body,
-html,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-ul {
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
   margin: 0;
   padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  text-decoration: none;
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
   list-style: none;
-  box-sizing: border-box;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+#header .header__categories, #header .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 body,
@@ -24,79 +64,83 @@ html {
   font-family: "Montserrat", sans-serif;
 }
 
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-footer #bottom {
+#header {
   width: 100%;
-  min-height: 300px;
-  background-color: #000;
-  color: #fff;
 }
-footer #bottom .contact {
-  display: flex;
-  justify-content: space-around;
+@media screen and (max-width: 767px) {
+  #header {
+    overflow: hidden;
+  }
 }
-footer #bottom .contact ul {
-  width: 150px;
-  display: inline-block;
-  margin-top: 20px;
-  margin-left: 25px;
+@media screen and (max-width: 767px) {
+  #header .desktop-header {
+    display: none;
+  }
 }
-footer #bottom .contact ul h3 {
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 25px;
+#header .mobile-header {
+  display: none;
 }
-footer #bottom .contact ul li {
-  opacity: 0.5;
-  margin-top: 10px;
+@media screen and (max-width: 767px) {
+  #header .mobile-header {
+    display: flex;
+    padding: 10px 0 !important;
+    justify-content: center !important;
+  }
 }
-footer #bottom .contact .subscribe {
-  width: 270px;
-  display: inline-block;
-  margin-top: 20px;
-}
-footer #bottom .contact .subscribe h3 {
-  text-transform: capitalize;
-  letter-spacing: 1px;
-}
-footer #bottom .contact .subscribe p {
-  opacity: 0.5;
-}
-footer #bottom .contact .subscribe form input[type=email] {
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3215686275);
-  width: 100%;
-  outline: none;
-  letter-spacing: 1px;
-}
-footer #bottom .contact .subscribe form input[type=submit] {
+#header .header {
   width: 100%;
   height: 40px;
-  margin-top: 20px;
-  background-color: #df5200;
+  padding: 20px 50px;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background-color: #fff;
+}
+#header .header__brand {
+  font-size: 35px;
+  letter-spacing: 3px;
+}
+#header .header__categories {
+  width: 320px;
+}
+#header .header form {
+  position: relative;
+  margin-left: 30px;
+}
+#header .header form input[type=search] {
+  width: 330px;
   border: none;
-  color: #fff;
-  letter-spacing: 0.2px;
-  border-radius: 8px;
-  text-transform: uppercase;
-  opacity: 0.7;
-  transition: all linear 0.35s;
+  border-radius: 6px;
+  padding: 10px 30px;
+  outline: none;
+  font-size: 12px;
+  background: rgba(211, 211, 211, 0.3098039216);
 }
-footer #bottom .contact .subscribe form input[type=submit]:hover {
-  opacity: 1;
-  cursor: pointer;
+#header .header form img {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  width: 15px;
 }
-footer #bottom a {
-  color: #fff;
+#header .header__user {
+  display: flex;
+  -moz-column-gap: 12px;
+       column-gap: 12px;
+}
+#header .header__user .active {
+  border-bottom: 2px solid rgb(255, 0, 0);
+}
+#header .header__user--info {
+  align-items: center;
+  row-gap: 5px;
+  display: flex;
+  flex-direction: column;
+}
+#header .header__user--info img {
+  width: 20px;
+}
+#header .header__user--info a {
+  color: #000;
 }
 
 .item-1 {
@@ -116,20 +160,32 @@ footer #bottom a {
 }
 
 #products {
-  width: 84%;
-  margin: 0 auto;
-  padding: 55px;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto;
-  grid-template-areas: "header header header" "main . sidebar" "footer footer footer";
+  width: 100%;
+  display: flex;
+  justify-content: center;
   -moz-column-gap: 20px;
        column-gap: 20px;
   row-gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 5em;
+}
+@media screen and (max-width: 767px) {
+  #products {
+    width: auto;
+    -moz-column-gap: 0;
+         column-gap: 0;
+    padding: 20px 0;
+    margin-top: 3em;
+  }
 }
 #products .cards {
   height: auto;
   position: relative;
+}
+@media screen and (max-width: 767px) {
+  #products .cards {
+    width: 350px;
+  }
 }
 #products .cards__img {
   width: 100%;
@@ -138,6 +194,12 @@ footer #bottom a {
      object-fit: cover;
   margin-bottom: 5px;
   transition: all linear 0.35s;
+}
+@media screen and (max-width: 767px) {
+  #products .cards__img {
+    width: 300px;
+    height: 350px;
+  }
 }
 #products .cards__img:hover {
   box-shadow: -4px 2px 15px 0px;
@@ -149,6 +211,11 @@ footer #bottom a {
 #products .cards__product {
   display: flex;
   justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  #products .cards__product {
+    font-size: 14px;
+  }
 }
 #products .cards__product__title--color {
   opacity: 0.7;
@@ -164,63 +231,131 @@ footer #bottom a {
   width: 16px;
 }
 
-header nav {
+#footer #bottom {
+  width: 100%;
+  min-height: 300px;
+  background-color: #000;
+  color: #fff;
+}
+#footer #bottom .contact {
+  display: flex;
+  justify-content: space-around;
+}
+@media screen and (max-width: 767px) {
+  #footer #bottom .contact {
+    align-items: center;
+    row-gap: 30px;
+  }
+}
+#footer #bottom .contact ul {
+  width: 150px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-left: 25px;
+}
+#footer #bottom .contact ul h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 25px;
+}
+#footer #bottom .contact ul li {
+  opacity: 0.5;
+  margin-top: 10px;
+}
+#footer #bottom .contact .subscribe {
+  width: 270px;
+  display: inline-block;
+  margin-top: 20px;
+}
+@media screen and (max-width: 767px) {
+  #footer #bottom .contact .subscribe {
+    width: 350px !important;
+    padding: 0;
+  }
+}
+#footer #bottom .contact .subscribe h3 {
+  text-transform: capitalize;
+  letter-spacing: 1px;
+}
+#footer #bottom .contact .subscribe p {
+  opacity: 0.5;
+}
+@media screen and (max-width: 767px) {
+  #footer #bottom .contact .subscribe p {
+    line-height: 25px;
+  }
+}
+#footer #bottom .contact .subscribe form input[type=email] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3215686275);
+  width: 100%;
+  outline: none;
+  letter-spacing: 1px;
+}
+#footer #bottom .contact .subscribe form input[type=submit] {
   width: 100%;
   height: 40px;
-  display: flex;
-  justify-content: center;
-  -moz-column-gap: 50px;
-       column-gap: 50px;
-  align-items: center;
-  margin: 20px 0;
-}
-header nav .brand {
-  font-size: 35px;
-  letter-spacing: 3px;
-}
-header nav .category {
-  display: flex;
-  -moz-column-gap: 20px;
-       column-gap: 20px;
-  cursor: pointer;
-}
-header nav form {
-  position: relative;
-  margin-left: 30px;
-}
-header nav form input {
-  width: 330px;
+  margin-top: 20px;
+  background-color: #df5200;
   border: none;
-  border-radius: 6px;
-  padding: 10px 30px;
-  outline: none;
-  font-size: 12px;
-  background: rgba(211, 211, 211, 0.3098039216);
+  color: #fff;
+  letter-spacing: 0.2px;
+  border-radius: 8px;
+  text-transform: uppercase;
+  opacity: 0.7;
+  transition: all linear 0.35s;
 }
-header nav form img {
-  position: absolute;
-  left: 10px;
-  top: 9px;
-  width: 15px;
-}
-header nav .account {
-  display: flex;
-  -moz-column-gap: 12px;
-       column-gap: 12px;
-}
-header nav .account .active {
-  border-bottom: 2px solid rgb(255, 0, 0);
-}
-header nav .account li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+#footer #bottom .contact .subscribe form input[type=submit]:hover {
+  opacity: 1;
   cursor: pointer;
-  row-gap: 5px;
 }
-header nav .account li img {
-  width: 20px;
+#footer #bottom a {
+  color: #fff;
 }
-header nav .account li a {
-  color: #000;
+
+@media only screen and (max-width: 767px) {
+  #products {
+    width: 100%;
+  }
+  #products .cards__img {
+    width: 100%;
+  }
+  #bottom .contact {
+    flex-direction: column;
+  }
+  #bottom .contact ul h3 {
+    margin-bottom: 15px;
+    font-size: 17px;
+  }
+  #bottom .contact ul li {
+    font-size: 16px;
+  }
+  #bottom .contact input[type=email] {
+    font-size: 16px;
+    color: #fff;
+    margin: 10px 0;
+  }
+  #bottom .contact .subscribe {
+    display: flex !important;
+    flex-direction: column;
+    padding: 0 21px;
+    row-gap: 12px;
+    margin-bottom: 20px;
+    justify-content: space-between;
+  }
+}
+@media only screen and (max-width: 991px) {
+  #products {
+    width: 100%;
+  }
+  #bottom .contact {
+    padding-bottom: 30px;
+  }
+  #bottom .contact .subscribe {
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column;
+    row-gap: 20px;
+  }
 }/*# sourceMappingURL=style.css.map */

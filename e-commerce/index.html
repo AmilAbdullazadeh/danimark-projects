@@ -16,41 +16,70 @@
     <link rel="stylesheet" href="./style/style.css" />
   </head>
   <body>
-    <!-- header -->
-    <header>
-      <nav>
-        <div class="brand">
-          PRADA
+    <!-- header start -->
+    <header id="header">
+      <nav class="header desktop-header">
+        <div class="header__brand">
+          <a href="/">PRADA</a>
         </div>
-        <ul class="category" >
-          <li>Men</li>
-          <li>Women</li>
-          <li>Inspiration</li>
-          <li>The Blog</li>
+        <ul class="header__categories">
+          <li class="header__category">
+            <a href="/">Men</a>
+          </li>
+          <li class="header__category">
+            <a href="/">Women</a>
+          </li>
+          <li class="header__category">
+            <a href="/">Inspiration</a>
+          </li>
+          <li class="header__category">
+            <a href="/">The Blog</a>
+          </li>
         </ul>
-          <form>
-            <input type="search" name="search" id="search" placeholder="Search for products" />
-            <img src="./assets/icons/search.svg" alt="search icon">
-          </form>
-          <ul class="account" >
-            <li class="active" >
-              <img src="./assets/icons/user.svg" alt="">
-              <a href="">Profile</a>
-            </li>
-            <li>
-              <img src="./assets/icons/bookmark.svg" alt="">
-              <a href="">Whishlist</a>
-            </li>
-            <li>
-              <img src="./assets/icons/shopping-cart.svg" alt="">
-              <a href="">Bag</a>
-            </li>
-          </ul>
+        <form>
+          <input
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search for products"
+          />
+          <img src="./assets/icons/search.svg" alt="search icon" />
+        </form>
+        <ul class="header__user">
+          <li class="header__user--profile header__user--info active">
+            <img src="./assets/icons/user.svg" alt="" />
+            <a href="">Profile</a>
+          </li>
+          <li class="header__user--wishlist header__user--info">
+            <img src="./assets/icons/bookmark.svg" alt="" />
+            <a href="">Whishlist</a>
+          </li>
+          <li class="header__user--bag header__user--info">
+            <img src="./assets/icons/shopping-cart.svg" alt="" />
+            <a href="">Bag</a>
+          </li>
+        </ul>
+      </nav>
+      <nav class="header mobile-header">
+        <ul class="header__categories">
+          <li class="header__category">
+            <a href="/">Men</a>
+          </li>
+          <li class="header__category">
+            <a href="/">Women</a>
+          </li>
+          <li class="header__category">
+            <a href="/">Inspiration</a>
+          </li>
+          <li class="header__category">
+            <a href="/">The Blog</a>
+          </li>
+        </ul>
       </nav>
     </header>
 
-    <!-- main -->
-    <main>
+    <!-- main start -->
+    <main id="main">
       <section id="products">
         <div class="cards item-1">
           <img
@@ -128,7 +157,7 @@
           />
         </div>
 
-        <!-- <div class="cards item-5">
+        <div class="cards item-5">
           <img
             class="cards__img cards__img--border"
             src="./assets/pictures/product_2.jpeg"
@@ -164,12 +193,50 @@
             src="./assets/icons/heart.svg"
             alt="Favourite icon"
           />
-        </div> -->
+        </div>
+
+        <div class="cards item-5">
+          <img
+            class="cards__img cards__img--border"
+            src="./assets/pictures/product_2.jpeg"
+            alt="product image"
+          />
+          <div class="cards__product">
+            <span class="cards__product__title cards__product__title--color"
+              >Butterly printed t-shirt</span
+            >
+            <b class="cards__product--price">155</b>
+          </div>
+          <img
+            class="cards__product--icon"
+            src="./assets/icons/heart.svg"
+            alt="Favourite icon"
+          />
+        </div>
+
+        <div class="cards item-6">
+          <img
+            class="cards__img cards__img--border"
+            src="./assets/pictures/product_3.jpeg"
+            alt="product image"
+          />
+          <div class="cards__product">
+            <span class="cards__product__title cards__product__title--color"
+              >Butterly printed t-shirt</span
+            >
+            <b class="cards__product--price">155</b>
+          </div>
+          <img
+            class="cards__product--icon"
+            src="./assets/icons/heart.svg"
+            alt="Favourite icon"
+          />
+        </div>
       </section>
     </main>
 
-    <!-- footer -->
-    <footer>
+    <!-- footer start -->
+    <footer id="footer">
       <section id="bottom">
         <div class="contact">
           <div class="list">
