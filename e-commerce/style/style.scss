@@ -117,77 +117,101 @@ html {
   grid-area: footer;
 }
 
-// products start
-#products {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  column-gap: 20px;
-  row-gap: 20px;
-  flex-wrap: wrap;
-  margin-top: 5em;
+//main start
+#main {
+  margin-bottom: 50px;
+  margin-top: 7em;
+  @include flexbox(column);
 
   @include mobile {
-    width: auto;
-    column-gap: 0;
-    padding: 20px 0;
-    margin-top: 3em;
+    margin: 50px 0;
   }
 
-  .cards {
-    height: auto;
-    position: relative;
+  .products__title {
+    font-size: 35px;
+    letter-spacing: 1.5px;
+    text-align: center;
+    animation: focus-in-contract-bck 3s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  }
+  #products {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    column-gap: 20px;
+    row-gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 5em;
+    // animation-name: transformX;
+    animation-duration: 3s;
+    // animation-delay: 1s;
+    // animation-iteration-count: 1;
+    // animation-timing-function: linear;
+    // animation: transformX 3s linear 1s 1;
 
     @include mobile {
-      width: 350px;
-    }
-
-    &__img {
+      justify-content: center;
       width: 100%;
-      height: 450px;
-      object-fit: cover;
-      margin-bottom: 5px;
-      transition: all linear 0.35s;
-
-      @include mobile {
-        width: 300px;
-        height: 350px;
-      }
-
-      &:hover {
-        box-shadow: -4px 2px 15px 0px;
-        cursor: pointer;
-      }
-
-      &--border {
-        border-radius: 8px;
-      }
+      column-gap: 0;
+      padding: 20px 0;
+      margin-top: 3em;
     }
 
-    &__product {
-      display: flex;
-      justify-content: space-between;
+    .cards {
+      width: 385px;
+      height: auto;
+      position: relative;
 
       @include mobile {
-        font-size: 14px;
+        width: 350px;
       }
 
-      &__title--color {
-        opacity: 0.7;
-      }
+      &__img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        margin-bottom: 5px;
+        transition: all linear 0.35s;
 
-      &--price {
-        &::before {
-          content: "$ ";
+        @include mobile {
+          width: 100%;
+          height: 350px;
+        }
+
+        &:hover {
+          box-shadow: -4px 2px 15px 0px;
+          cursor: pointer;
+        }
+
+        &--border {
+          border-radius: 8px;
         }
       }
 
-      &--icon {
-        position: absolute;
-        top: 12px;
-        right: 12px;
-        z-index: 9;
-        width: 16px;
+      &__product {
+        display: flex;
+        justify-content: space-between;
+
+        @include mobile {
+          font-size: 14px;
+        }
+
+        &__title--color {
+          opacity: 0.7;
+        }
+
+        &--price {
+          &::before {
+            content: "$ ";
+          }
+        }
+
+        &--icon {
+          position: absolute;
+          top: 12px;
+          right: 12px;
+          z-index: 9;
+          width: 16px;
+        }
       }
     }
   }
@@ -197,15 +221,22 @@ html {
 #footer {
   #bottom {
     width: 100%;
-    min-height: 300px;
+    min-height: 100px;
+    max-height: 250px;
     background-color: #000;
     color: #fff;
+
+    @include mobile {
+      max-height: 100%;
+    }
 
     .contact {
       display: flex;
       justify-content: space-around;
+      padding: 30px 0;
 
       @include mobile {
+        @include flexbox(column);
         align-items: center;
         row-gap: 30px;
       }
@@ -230,7 +261,8 @@ html {
 
       .subscribe {
         width: 270px;
-        display: inline-block;
+        @include flexbox(column);
+        row-gap: 15px;
         margin-top: 20px;
 
         @include mobile {
@@ -244,6 +276,7 @@ html {
         }
 
         p {
+          line-height: 22px;
           opacity: 0.5;
 
           @include mobile {
@@ -289,70 +322,25 @@ html {
   }
 }
 
-// mobile devices
-@media only screen and (max-width: 767px) {
-  #products {
-    width: 100%;
-
-    .cards {
-      &__img {
-        width: 100%;
-      }
-    }
+@keyframes transformX {
+  0% {
+    transform: translateX(-130%);
   }
-
-  #bottom {
-    .contact {
-      flex-direction: column;
-
-      ul {
-        h3 {
-          margin-bottom: 15px;
-          font-size: 17px;
-        }
-
-        li {
-          font-size: 16px;
-        }
-      }
-
-      input[type="email"] {
-        font-size: 16px;
-        color: #fff;
-        margin: 10px 0;
-      }
-
-      .subscribe {
-        display: flex !important;
-        flex-direction: column;
-        padding: 0 21px;
-        row-gap: 12px;
-        margin-bottom: 20px;
-        justify-content: space-between;
-      }
-    }
+  100% {
+    transform: translateX(0);
   }
 }
 
-// tablet devices
-@media only screen and (max-width: 991px) {
-  #products {
-    width: 100%;
-
-    .cards {
-    }
+@keyframes focus-in-contract-bck {
+  0% {
+    letter-spacing: 1em;
+    transform: translateZ(300px);
+    filter: blur(12px);
+    opacity: 0;
   }
-
-  #bottom {
-    .contact {
-      padding-bottom: 30px;
-
-      .subscribe {
-        width: 100% !important;
-        display: flex !important;
-        flex-direction: column;
-        row-gap: 20px;
-      }
-    }
+  100% {
+    transform: translateZ(12px);
+    filter: blur(0);
+    opacity: 1;
   }
 }
