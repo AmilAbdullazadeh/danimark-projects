@@ -8,6 +8,7 @@ const openPopup = () => {
     overlay.classList.remove("hidden");
 }
 
+
 const closePopup = () => {
     modal.classList.add("hidden")
     overlay.classList.add("hidden")
